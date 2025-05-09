@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PNG to GIF Hover</title>
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('imgs/bg code trailmix.png')no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+  
+
+    .container {
+      width: 90%; /* Leaves 20% margin on both sides */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    .image-wrapper {
+      width: 9.5%; /* Adjust size to fit 10 images in 60% space */
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .image-wrapper img:hover {
+      transform: scale(1);
+    }
+
+
+    @keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  /* Initial transform to avoid conflict with JS transform */
+  transform: translateY(0);
+}
+
+  </style>
+
+  </p>
+</head>
+<body>
+
+  <div class="container">
+    <div class="image-wrapper">
+      <img src="imgs/a1.png" data-png="imgs/a1.png" data-gif="imgs/aa.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/s1.png" data-png="imgs/s1.png" data-gif="imgs/ss.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/t1.png" data-png="imgs/t1.png" data-gif="imgs/tt.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/r1.png" data-png="imgs/r1.png" data-gif="imgs/rr.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/o1.png" data-png="imgs/o1.png" data-gif="imgs/oo1.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/n1.png" data-png="imgs/n1.png" data-gif="imgs/nn.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/o2.png" data-png="imgs/o2.png" data-gif="imgs/oo2.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/m1.png" data-png="imgs/m1.png" data-gif="imgs/mm.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/e1.png" data-png="imgs/e1.png" data-gif="imgs/ee.gif">
+    </div>
+    <div class="image-wrapper">
+      <img src="imgs/r1.png" data-png="imgs/r1.png" data-gif="imgs/rr.gif">
+    </div>
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.image-wrapper img');
+  
+    images.forEach(img => {
+      img.addEventListener('mouseenter', () => {
+        img.src = img.dataset.gif;
+        img.style.transform = 'translateY(0) scale(1.10)';
+      });
+  
+      img.addEventListener('mouseleave', () => {
+        img.src = img.dataset.png;
+        img.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  </script>
+
+</body>
+</html>
